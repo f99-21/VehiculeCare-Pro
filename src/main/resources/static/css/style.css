@@ -1,0 +1,209 @@
+/* --- VARIABLES DE DISEÑO --- */
+:root {
+    --color-primario: #2563eb;
+    --color-fondo: #f8fafc;
+    --color-borde: #e2e8f0;
+    --color-texto-principal: #0f172a;
+    --color-texto-secundario: #64748b;
+    --color-blanco: #ffffff;
+    --radio-borde: 0.5rem;
+}
+
+/* --- ESTILOS GENERALES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- CONTENEDOR PRINCIPAL DEL DASHBOARD --- */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--color-blanco);
+    border-right: 1px solid var(--color-borde);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.sidebar-nav ul {
+    list-style: none;
+}
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radio-borde);
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease-in-out;
+}
+.sidebar-nav li a:hover {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+}
+.sidebar-nav li a.active {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+.sidebar-nav li a .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.header-title h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+.header-title p {
+    color: var(--color-texto-secundario);
+}
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+.search-bar {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    width: 250px;
+}
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radio-borde);
+    border: 1px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.btn-secondary {
+    border-color: var(--color-borde);
+    background-color: var(--color-blanco);
+}
+.btn-primary {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* --- SECCIÓN EN DESARROLLO --- */
+.content-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+}
+.dev-section .icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: var(--color-texto-secundario);
+}
+.dev-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.dev-section p {
+    color: var(--color-texto-secundario);
+}
+
+/* --- FORMULARIOS DE LOGIN Y REGISTRO --- */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.auth-form {
+    background-color: var(--color-blanco);
+    padding: 2.5rem;
+    border-radius: var(--radio-borde);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-texto-secundario);
+}
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    font-size: 1rem;
+}
+.auth-form .btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+.form-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--color-texto-secundario);
+}
+.form-switch a {
+    color: var(--color-primario);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* --- CLASE PARA OCULTAR ELEMENTOS --- */
+.hidden {
+    display: none !important;
+}
